@@ -13,6 +13,9 @@ namespace Server_Library.Data
 		public DbSet<Branch> BranchesTbl { get; set; }
 		public DbSet<Town> TownsTbl { get; set; }
 		public DbSet<AppUser> AppUsersTbl { get; set; }
+		public DbSet<SystemRole> SystemRolesTbl { get; set; }
+		public DbSet<UserRole> UserRolesTbl { get; set; }
+
 
 	}
 }
