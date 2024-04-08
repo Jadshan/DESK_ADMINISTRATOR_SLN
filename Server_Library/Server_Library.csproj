@@ -20,11 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repos\Contracts\" />
-    <Folder Include="Repos\Implementations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Base_Library\Base_Library.csproj" />
   </ItemGroup>
 
