@@ -24,5 +24,14 @@ namespace DESK_SERVER.Controllers
 			var result = await _accountRepo.SignInAsync(login);
 			return Ok(result);
 		}
+
+		[HttpPost("referesh-token")]
+		public async Task<IActionResult> RefereshTokenAsync(RefereshTokenDTO tokenDTO)
+		{
+			if (tokenDTO == null) return BadRequest("Model is empty");
+			var result = await _accountRepo.RefershTokenAsync(tokenDTO);
+			return Ok(result);
+		}
+
 	}
 }

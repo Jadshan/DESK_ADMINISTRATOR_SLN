@@ -8,6 +8,9 @@ namespace Server_Library.Repos.RepoInterfaces
 
 		Task<GeneralResponse> CreateAsynsc(RegisterDTO user);
 		Task<LoginResponse> SignInAsync(LoginDTO user);
+		Task<LoginResponse> RefershTokenAsync(RefereshTokenDTO token);
+
+
 	}
 
 }

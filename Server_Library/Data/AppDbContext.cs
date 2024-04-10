@@ -15,7 +15,7 @@ namespace Server_Library.Data
 		public DbSet<AppUser> AppUsersTbl { get; set; }
 		public DbSet<SystemRole> SystemRolesTbl { get; set; }
 		public DbSet<UserRole> UserRolesTbl { get; set; }
-
+		public DbSet<RefereshTokenInfo> RefereshTokenInfosTbl { get; set; }
 
 	}
 }
