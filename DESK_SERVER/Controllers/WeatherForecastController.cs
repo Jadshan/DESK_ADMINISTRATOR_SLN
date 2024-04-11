@@ -1,9 +1,12 @@
+using Base_Library.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DESK_SERVER.Controllers
 {
 	[ApiController]
 	[Route("[controller]")]
+	[Authorize(Roles = "Admin")]
 	public class WeatherForecastController : ControllerBase
 	{
 		private static readonly string[] Summaries = new[]
@@ -18,10 +21,10 @@ namespace DESK_SERVER.Controllers
 			_logger = logger;
 		}
 
-		[HttpGet(Name = "GetWeatherForecast")]
-		public IEnumerable<WeatherForecast> Get()
+		[HttpGet]
+		public IEnumerable<WeatherForecastDTO> Get()
 		{
-			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+			return Enumerable.Range(1, 5).Select(index => new WeatherForecastDTO
 			{
 				Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
 				TemperatureC = Random.Shared.Next(-20, 55),
