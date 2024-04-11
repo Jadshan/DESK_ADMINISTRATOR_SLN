@@ -1,6 +1,6 @@
-namespace DESK_SERVER
+namespace Base_Library.DTOs
 {
-	public class WeatherForecast
+	public class WeatherForecastDTO
 	{
 		public DateOnly Date { get; set; }
 
