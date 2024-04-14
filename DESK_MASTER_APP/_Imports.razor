@@ -1,5 +1,8 @@
 ﻿@using System.Net.Http
 @using System.Net.Http.Json
+@using App_Library.Services.Contracts
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.AspNetCore.Components.Routing
 @using Microsoft.AspNetCore.Components.Web
@@ -8,3 +11,10 @@
 @using Microsoft.JSInterop
 @using DESK_MASTER_APP
 @using DESK_MASTER_APP.Layout
+
+@using Base_Library.DTOs
+@using App_Library.Helpers
+
+@inject NavigationManager NavManager
+@inject AuthenticationStateProvider AuthStateProvider
+@inject IUserAccountService accountService
