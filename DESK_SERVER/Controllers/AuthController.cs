@@ -1,11 +1,13 @@
 ﻿using Base_Library.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Server_Library.Repos.RepoInterfaces;
 
 namespace DESK_SERVER.Controllers
 {
-	[Route("api/[controller]")]
+	[Route("api/authentication")]
 	[ApiController]
+	[AllowAnonymous]
 	public class AuthController(IUserAccountRepo accountRepo) : ControllerBase
 	{
 		private readonly IUserAccountRepo _accountRepo = accountRepo;
@@ -13,7 +15,7 @@ namespace DESK_SERVER.Controllers
 		public async Task<IActionResult> CreateAsync(RegisterDTO registerDTO)
 		{
 			if (registerDTO == null) return BadRequest("Model is empty");
-			var result = await _accountRepo.CreateAsynsc(registerDTO);
+			var result = await _accountRepo.CreateAsync(registerDTO);
 			return Ok(result);
 		}
 
@@ -25,11 +27,11 @@ namespace DESK_SERVER.Controllers
 			return Ok(result);
 		}
 
-		[HttpPost("referesh-token")]
-		public async Task<IActionResult> RefereshTokenAsync(RefereshTokenDTO tokenDTO)
+		[HttpPost("refresh-token")]
+		public async Task<IActionResult> RefreshTokenAsync(RefreshTokenDTO tokenDTO)
 		{
 			if (tokenDTO == null) return BadRequest("Model is empty");
-			var result = await _accountRepo.RefershTokenAsync(tokenDTO);
+			var result = await _accountRepo.RefreshTokenAsync(tokenDTO);
 			return Ok(result);
 		}
 
