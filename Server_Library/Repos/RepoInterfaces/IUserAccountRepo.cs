@@ -6,9 +6,9 @@ namespace Server_Library.Repos.RepoInterfaces
 	public interface IUserAccountRepo
 	{
 
-		Task<GeneralResponse> CreateAsynsc(RegisterDTO user);
+		Task<GeneralResponse> CreateAsync(RegisterDTO user);
 		Task<LoginResponse> SignInAsync(LoginDTO user);
-		Task<LoginResponse> RefershTokenAsync(RefereshTokenDTO token);
+		Task<LoginResponse> RefreshTokenAsync(RefreshTokenDTO token);
 
 
 	}
