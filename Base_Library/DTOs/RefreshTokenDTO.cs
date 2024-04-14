@@ -1,6 +1,6 @@
 ﻿namespace Base_Library.DTOs
 {
-	public class RefereshTokenDTO
+	public class RefreshTokenDTO
 	{
 		public string? Token { get; set; }
 	}
