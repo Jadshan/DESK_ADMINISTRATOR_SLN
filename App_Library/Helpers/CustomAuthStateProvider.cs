@@ -28,7 +28,7 @@ namespace App_Library.Helpers
 		public async Task UpdateAuthState(UserSessionDTO userSessionDTO)
 		{
 			var claimsPrincipal = new ClaimsPrincipal();
-			if (userSessionDTO.Token != null || userSessionDTO.RefereshToken != null)
+			if (userSessionDTO.Token != null || userSessionDTO.RefreshToken != null)
 			{
 				var serializeSession = Serializations.SerializeObj(userSessionDTO);
 				await localStorageService.SetToken(serializeSession);

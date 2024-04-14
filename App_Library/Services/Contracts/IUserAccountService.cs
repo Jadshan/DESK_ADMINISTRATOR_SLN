@@ -7,7 +7,7 @@ namespace App_Library.Services.Contracts
 	{
 		Task<GeneralResponse> CreateAsync(RegisterDTO user);
 		Task<LoginResponse> SignInAsync(LoginDTO user);
-		Task<LoginResponse> RefereshTokenAsync(RefereshTokenDTO tokenDTO);
+		Task<LoginResponse> RefreshTokenAsync(RefreshTokenDTO tokenDTO);
 		Task<WeatherForecastDTO[]> GetWeatherForecasts();
 
 	}
